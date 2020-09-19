@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+}
+input[type="date"] {
+  position: relative;
+  padding: 0 10px;
+  width: 200px;
+  height: 36px;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #999;
+}
