@@ -1,11 +1,12 @@
 class Game {
-  constructor() {
+  constructor(digit = 4) {
     this.answer = [];
     this.log = [];
+    this.digit = digit;
     this.generateAnswer();
   }
   generateAnswer() {
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < this.digit; i++) {
       var loop = true;
       while (loop) {
         var number = parseInt(Math.random() * 10, 10);
@@ -22,12 +23,12 @@ class Game {
   }
   getInput(input) {
     document.getElementById("correct").innerHTML = "";
-    if (input.length !== 4) {
+    if (input.length !== this.digit) {
       document.getElementById("correct").innerHTML = "入力が不正です";
       return;
     }
     this.compareToAnswer(input);
-    if (this.log[this.log.length - 1].hit === 4) {
+    if (this.log[this.log.length - 1].hit === this.digit) {
       this.correct();
     }
     this.record();
@@ -37,7 +38,7 @@ class Game {
     var hit = 0;
     var blow = 0;
     try {
-      for (var i = 0; i < 4; i++) {
+      for (var i = 0; i < this.digit; i++) {
         var num = Number(input[i]);
         if (isNaN(num) || inputNum.includes(num)) {
           throw new Error("The message");
@@ -79,5 +80,6 @@ window.input = function input() {
   game.getInput(input);
 };
 window.reset = function reset() {
-  game = new Game();
+  var input = document.getElementById("digit").value;
+  game = new Game(Number(input));
 };
