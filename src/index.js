@@ -32,6 +32,7 @@ class Game {
       this.correct();
     }
     this.record();
+    document.getElementById("number").value = "";
   }
   compareToAnswer(input) {
     var inputNum = [];
@@ -83,3 +84,10 @@ window.reset = function reset() {
   var input = document.getElementById("digit").value;
   game = new Game(Number(input));
 };
+var input = document.querySelector("input");
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    var input = document.getElementById("number").value;
+    game.getInput(input);
+  }
+});

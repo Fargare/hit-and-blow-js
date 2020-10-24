@@ -1,14 +1,19 @@
 body {
-  font-family: sans-serif;
+  font-family: garamond;
+  background-color: rgb(41, 41, 41);
+  color: #ffffff;
 }
-input[type="date"] {
-  position: relative;
-  padding: 0 10px;
-  width: 200px;
-  height: 36px;
+
+#number {
   border: 0;
-  background: transparent;
-  box-sizing: border-box;
-  font-size: 14px;
-  color: #999;
+  padding: 10px;
+  font-size: 1.3em;
+  font-family: Arial, sans-serif;
+  color: #aaa;
+  border: solid 1px rgb(46, 40, 40);
+  margin: 0 0 20px;
+  width: 300px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
